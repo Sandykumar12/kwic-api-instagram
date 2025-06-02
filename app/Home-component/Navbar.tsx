@@ -7,12 +7,12 @@ import { NavLink } from "@remix-run/react";
 
 export default function Navbar() {
   return (
-    <div className="flex p-1 bg-gray-300 mt-5 mx-5 justify-center space-x-6 w-[500px] rounded-[30px]">
+    <div className="flex p-1 bg-gray-200 mt-5 mx-5 justify-center space-x-6 w-[500px] rounded-[30px]">
       <NavLink
         to="/Dashboard"
         className={({ isActive }) =>
           `flex flex-col items-center justify-center ${
-            isActive ? "text-green-500 bg-white rounded-[10px] px-2 " : "text-gray-600"
+            isActive ? "text-green-500 bg-white rounded-[10px] px-2  " : "text-gray-600"
           }`
         }
       >
@@ -83,7 +83,7 @@ export default function Navbar() {
                 isActive ? "text-green-500  bg-white w-auto rounded-[10px]  " : "text-gray-600"
               }`}
             />
-            <span className="text-xs font-medium">My Automations</span>
+            <span className="text-xs ">My Automations</span>
           </div>
         )}
       </NavLink>

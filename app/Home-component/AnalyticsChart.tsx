@@ -114,8 +114,8 @@ export default function AnalyticsChart(): JSX.Element {
                 dataKey="Comment"
                 stroke="#3b82f6"
                 strokeWidth={2.5}
-                dot={{ fill: '#3b82f6', strokeWidth: 2, r: 4 }}
-                activeDot={{ r: 6, stroke: '#3b82f6', strokeWidth: 2, fill: 'white' }}
+                dot={{ fill: 'white', strokeWidth: 2, r: 4 }}
+                activeDot={{ r: 6, stroke: '#3b82f6', strokeWidth: 2, fill: '#3b82f6' }}
                 strokeLinecap="round"
               />
               <Line
@@ -123,8 +123,8 @@ export default function AnalyticsChart(): JSX.Element {
                 dataKey="Sent"
                 stroke="#f97316"
                 strokeWidth={2.5}
-                dot={{ fill: '#f97316', strokeWidth: 2, r: 4 }}
-                activeDot={{ r: 6, stroke: '#f97316', strokeWidth: 2, fill: 'white' }}
+                dot={{ fill: 'white', strokeWidth: 2, r: 4 }}
+                activeDot={{ r: 6, stroke: '#f97316', strokeWidth: 2, fill: '#f97316' }}
                 strokeLinecap="round"
               />
               <Line
@@ -132,9 +132,10 @@ export default function AnalyticsChart(): JSX.Element {
                 dataKey="Click"
                 stroke="#10b981"
                 strokeWidth={2.5}
-                dot={{ fill: '#10b981', strokeWidth: 2, r: 4 }}
-                activeDot={{ r: 6, stroke: '#10b981', strokeWidth: 2, fill: 'white' }}
+                dot={{ fill: 'white', strokeWidth: 2, r: 4 }}
+                activeDot={{ r: 6, stroke: '#10b981', strokeWidth: 2, fill: '#10b981' }}
                 strokeLinecap="round"
+                  
               />
             </LineChart>
           </ResponsiveContainer>
