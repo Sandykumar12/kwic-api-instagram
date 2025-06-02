@@ -1,7 +1,7 @@
 import { FaFacebookF } from 'react-icons/fa';
 
 const grid = [
-  { image: "/", title: "Post 1" },
+  { image: "/", title: "" },
   { image: "/", title: "Post 2" },
   { image: "/", title: "Post 3" },
   { image: "/", title: "Post 4" },
