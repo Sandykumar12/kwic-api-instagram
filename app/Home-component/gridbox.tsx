@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { FaFacebookF } from 'react-icons/fa';
 
 const grid = [
@@ -9,8 +10,19 @@ const grid = [
 ];
 
 export default function Gridbox() {
+  const [visibleCount, setVisibleCount] = useState(0);
+
+  useEffect(() => {
+    if (visibleCount < grid.length) {
+      const timer = setTimeout(() => {
+        setVisibleCount((prev) => prev + 1);
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, [visibleCount]);
+
   return (
-    <div className="mt-10 m-5">
+    <div className="mt-10 px-9">
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-[22px] font-semibold">Start Automate Post</h1>
         <button className="border px-3 py-1 rounded-md border-gray-200 text-gray-500">
@@ -19,10 +31,14 @@ export default function Gridbox() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-        {grid.map((item, index) => (
+        {grid.slice(0, visibleCount).map((item, index) => (
           <div
             key={index}
-            className="relative bg-white border border-gray-300 rounded-lg overflow-hidden p-3"
+            className="relative bg-white border border-gray-300 rounded-lg overflow-hidden p-3 transform transition-all duration-500 ease-in-out opacity-0 scale-95 translate-y-4 animate-fadeIn"
+            style={{
+              animation: 'fadeInUp 0.5s ease forwards',
+              animationDelay: `${index * 0.1}s`,
+            }}
           >
             <div className="relative">
               {/* Facebook logo button */}
@@ -32,7 +48,7 @@ export default function Gridbox() {
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-[200px]  rounded-md"
+                className="w-full h-[200px] object-cover rounded-md"
               />
             </div>
 
@@ -44,6 +60,20 @@ export default function Gridbox() {
           </div>
         ))}
       </div>
+
+      {/* Animation Keyframes */}
+      <style>{`
+        @keyframes fadeInUp {
+          0% {
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+      `}</style>
     </div>
   );
 }
