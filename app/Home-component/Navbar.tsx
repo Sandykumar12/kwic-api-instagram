@@ -12,21 +12,21 @@ export default function Navbar() {
         className={({ isActive }) =>
           `flex flex-col items-center justify-center min-w-fit ${
             isActive
-              ? "text-green-500 bg-white rounded-[10px] px-2"
+              ? "text-green-500 bg-white rounded-[10px] "
               : "text-gray-600"
           }`
         }
       >
         {({ isActive }) => (
-          <div className="flex items-center gap-1 sm:gap-2">
+          <div className="flex items-center gap-1 sm:gap-1">
             <TbDashboard
-              className={`text-[20px] sm:text-[25px] ${
+              className={`text-[19px]  ${
                 isActive
                   ? "text-green-500 bg-white rounded-[10px]"
                   : "text-gray-600"
               }`}
             />
-            <span className="text-[10px] sm:text-xs whitespace-nowrap">
+            <span className="text-[10px] sm:text-xs font-medium whitespace-nowrap">
               Dashboard
             </span>
           </div>
@@ -38,21 +38,21 @@ export default function Navbar() {
         className={({ isActive }) =>
           `flex flex-col items-center justify-center min-w-fit ${
             isActive
-              ? "text-green-500 bg-white rounded-[10px] px-2"
+              ? "text-green-500 bg-white rounded-[10px] "
               : "text-gray-600"
           }`
         }
       >
         {({ isActive }) => (
-          <div className="flex items-center gap-1 sm:gap-2">
+          <div className="flex items-center gap-1 sm:gap-1">
             <MdOutlineDashboardCustomize
-              className={`text-[20px] sm:text-[25px] ${
+              className={`text-[17px] sm:text-[25px] ${
                 isActive
                   ? "text-green-500 bg-white rounded-[10px]"
                   : "text-gray-600"
               }`}
             />
-            <span className="text-[10px] sm:text-xs whitespace-nowrap">
+            <span className="text-[10px] sm:text-xs font-medium whitespace-nowrap">
               Post & Reels
             </span>
           </div>
@@ -64,21 +64,21 @@ export default function Navbar() {
         className={({ isActive }) =>
           `flex flex-col items-center justify-center min-w-fit ${
             isActive
-              ? "text-green-500 bg-white rounded-[10px] px-2"
+              ? "text-green-500 bg-white rounded-[10px]"
               : "text-gray-600"
           }`
         }
       >
         {({ isActive }) => (
-          <div className="flex items-center gap-1 sm:gap-2">
+          <div className="flex items-center gap-1 sm:gap-1">
             <MdOutlineHistoryToggleOff
-              className={`text-[20px] sm:text-[25px] ${
+              className={`text-[17px] sm:text-[25px] ${
                 isActive
                   ? "text-green-500 bg-white rounded-[10px]"
                   : "text-gray-600"
               }`}
             />
-            <span className="text-[10px] sm:text-xs whitespace-nowrap">
+            <span className="text-[10px] sm:text-xs font-medium whitespace-nowrap">
               Stories
             </span>
           </div>
@@ -90,21 +90,21 @@ export default function Navbar() {
         className={({ isActive }) =>
           `flex flex-col items-center justify-center min-w-fit ${
             isActive
-              ? "text-green-500 bg-white w-auto rounded-[10px] px-2"
+              ? "text-green-500 bg-white w-auto rounded-[10px]"
               : "text-gray-600"
           }`
         }
       >
         {({ isActive }) => (
-          <div className="flex items-center gap-1 sm:gap-2">
+          <div className="flex items-center gap-1 sm:gap-1">
             <BiLogoReact
-              className={`text-[20px] sm:text-[25px] ${
+              className={`text-[17px] sm:text-[25px] ${
                 isActive
                   ? "text-green-500 bg-white w-auto rounded-[10px]"
                   : "text-gray-600"
               }`}
             />
-            <span className="text-[10px] sm:text-xs whitespace-nowrap">
+            <span className="text-[10px] sm:text-xs font-medium whitespace-nowrap">
               My Automations
             </span>
           </div>
