@@ -1,7 +1,7 @@
 import { FaFacebookF } from 'react-icons/fa';
 
 const grid = [
-  { image: "/", title: "" },
+  { image: "/", title: "Post 1" },
   { image: "/", title: "Post 2" },
   { image: "/", title: "Post 3" },
   { image: "/", title: "Post 4" },
@@ -13,7 +13,7 @@ export default function Gridbox() {
     <div className="mt-10 m-5">
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-[22px] font-semibold">Start Automate Post</h1>
-        <button className="border-2 w-32 h-8 rounded-md border-gray-500 text-gray-600">
+        <button className="border px-3 py-1 rounded-md border-gray-200 text-gray-500">
           View all post
         </button>
       </div>
@@ -22,9 +22,9 @@ export default function Gridbox() {
         {grid.map((item, index) => (
           <div
             key={index}
-            className="relative bg-white shadow-md rounded-lg overflow-hidden p-3"
+            className="relative bg-white border border-gray-300 rounded-lg overflow-hidden p-3"
           >
-            <div className="relative  bg-gray-200 rounded-lg">
+            <div className="relative">
               {/* Facebook logo button */}
               <button className="absolute top-2 right-2 bg-blue-600 text-white p-2 rounded-full shadow">
                 <FaFacebookF size={16} />
@@ -32,7 +32,7 @@ export default function Gridbox() {
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-[700px] h-[200px] rounded-lg"
+                className="w-full h-[200px]  rounded-md"
               />
             </div>
 
