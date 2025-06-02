@@ -4,7 +4,7 @@ import Navbar from '~/Home-component/Navbar'
 export default function _index() {
   return (
     <div>
-<Navbar/>
+{/* <Navbar/> */}
 
     </div>
   )

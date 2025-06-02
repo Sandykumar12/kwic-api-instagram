@@ -1,22 +1,26 @@
-import { FiHome, FiPlusSquare, FiClock, FiZap } from "react-icons/fi";
+
+import { TbDashboard } from "react-icons/tb";
+import { MdOutlineDashboardCustomize } from "react-icons/md";
+import { MdOutlineHistoryToggleOff } from "react-icons/md";
+import { BiLogoReact } from "react-icons/bi";
 import { NavLink } from "@remix-run/react";
 
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-around p-4 bg-white border-b border-gray-200">
+    <div className="flex p-2 bg-gray-300 mt-5 mx-5 justify-center space-x-6 w-[500px] rounded-[30px]">
       <NavLink
         to="/dashboard"
         className={({ isActive }) =>
           `flex flex-col items-center justify-center ${
-            isActive ? "text-green-500" : "text-gray-600"
+            isActive ? "text-green-500 bg-white rounded-3xl p-1" : "text-gray-600"
           }`
         }
       >
         {({ isActive }) => (
-          <div className="flex flex-col items-center gap-1">
-            <FiHome
-              className={`text-2xl ${
-                isActive ? "text-green-500" : "text-gray-600"
+          <div className="flex items-center  gap-1">
+            <TbDashboard
+              className={`text-[25px] ${
+                isActive ? "text-green-500  bg-white rounded-3xl p-1" : "text-gray-600"
               }`}
             />
             <span className="text-xs">Dashboard</span>
@@ -28,15 +32,15 @@ export default function Navbar() {
         to="/post-reels"
         className={({ isActive }) =>
           `flex flex-col items-center justify-center ${
-            isActive ? "text-green-500" : "text-gray-600"
+            isActive ? "text-green-500  bg-white rounded-3xl p-1" : "text-gray-600"
           }`
         }
       >
         {({ isActive }) => (
-          <div className="flex flex-col items-center gap-1">
-            <FiPlusSquare
-              className={`text-2xl ${
-                isActive ? "text-green-500" : "text-gray-600"
+          <div className="flex items-center gap-1">
+            <MdOutlineDashboardCustomize 
+              className={`text-[25px] ${
+                isActive ? "text-green-500  bg-white rounded-3xl p-1" : "text-gray-600"
               }`}
             />
             <span className="text-xs">Post & Reels</span>
@@ -48,15 +52,15 @@ export default function Navbar() {
         to="/stories"
         className={({ isActive }) =>
           `flex flex-col items-center justify-center ${
-            isActive ? "text-green-500" : "text-gray-600"
+            isActive ? "text-green-500  bg-white rounded-3xl p-1" : "text-gray-600"
           }`
         }
       >
         {({ isActive }) => (
-          <div className="flex flex-col items-center gap-1">
-            <FiClock
-              className={`text-2xl ${
-                isActive ? "text-green-500" : "text-gray-600"
+          <div className="flex items-center gap-1">
+            <MdOutlineHistoryToggleOff
+              className={`text-[25px] ${
+                isActive ? "text-green-500  bg-white rounded-3xl p-1" : "text-gray-600"
               }`}
             />
             <span className="text-xs">Stories</span>
@@ -68,21 +72,21 @@ export default function Navbar() {
         to="/automations"
         className={({ isActive }) =>
           `flex flex-col items-center justify-center ${
-            isActive ? "text-green-500" : "text-gray-600"
+            isActive ? "text-green-500  bg-white rounded-3xl p-1" : "text-gray-600"
           }`
         }
       >
         {({ isActive }) => (
-          <div className="flex flex-col items-center gap-1">
-            <FiZap
-              className={`text-2xl ${
-                isActive ? "text-green-500" : "text-gray-600"
+          <div className="flex items-center gap-1">
+            <BiLogoReact
+              className={`text-[25px] ${
+                isActive ? "text-green-500  bg-white rounded-3xl p-1" : "text-gray-600"
               }`}
             />
             <span className="text-xs">My Automations</span>
           </div>
         )}
       </NavLink>
-    </nav>
+    </div>
   );
 }
