@@ -63,7 +63,7 @@ export default function AnalyticsChart(): JSX.Element {
   };
 
   return (
-    <div className=" bg-white rounded-lg shadow-sm border border-gray-100 max-w-7xl mx-auto">
+    <div className=" bg-white rounded-lg shadow-sm border border-gray-400 max-w-7xl mx-auto mt-10">
       <div className="flex flex-col sm:flex-row sm:items-center  sm:justify-between p-4 sm:p-6 border-b border-gray-100 gap-4">
         <h2 className="text-lg font-semibold text-gray-900">Analytics</h2>
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
