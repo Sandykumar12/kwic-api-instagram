@@ -63,8 +63,8 @@ export default function AnalyticsChart(): JSX.Element {
   };
 
   return (
-    <div className=" bg-white rounded-lg shadow-sm border border-gray-400 max-w-7xl mx-auto mt-10">
-      <div className="flex flex-col sm:flex-row sm:items-center  sm:justify-between p-4 sm:p-6 border-b border-gray-100 gap-4">
+    <div className=" bg-white rounded-lg shadow-sm border border-gray-300 max-w-7xl mx-auto mt-10">
+      <div className="flex flex-col sm:flex-row sm:items-center  sm:justify-between p-4 sm:p-6 border-b border-gray-300 gap-4">
         <h2 className="text-lg font-semibold text-gray-900">Analytics</h2>
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
           <div className="flex items-center gap-4 sm:gap-6">
@@ -81,7 +81,7 @@ export default function AnalyticsChart(): JSX.Element {
               <span className="text-sm text-gray-600">Comment</span>
             </div>
           </div>
-          <button className="text-sm text-gray-500 border border-gray-200 px-3 py-1 rounded-md hover:bg-gray-50 transition-colors whitespace-nowrap">
+          <button className="text-sm text-gray-500 border border-gray-300 px-3 py-1 rounded-md hover:bg-gray-50 transition-colors whitespace-nowrap">
             View all post <span className="ml-1">↓</span>
           </button>
         </div>
@@ -101,10 +101,11 @@ export default function AnalyticsChart(): JSX.Element {
             >
               <CartesianGrid
                 strokeDasharray="3 3"
-                stroke="#f1f5f9"
+                stroke="#cbd5e1" // stronger color (Tailwind's slate-300)
                 horizontal={true}
                 vertical={false}
               />
+
               <XAxis
                 dataKey="month"
                 axisLine={false}
