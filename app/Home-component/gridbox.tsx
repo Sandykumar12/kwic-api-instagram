@@ -1,28 +1,40 @@
-import { useEffect, useState } from 'react';
-import { FaFacebookF } from 'react-icons/fa';
+import { useState } from 'react';
+import { BsFacebook, BsInstagram } from 'react-icons/bs';
+import Button from './Button';
 
 const grid = [
-  { image: "/", title: "Post 1" },
-  { image: "/", title: "Post 2" },
-  { image: "/", title: "Post 3" },
-  { image: "/", title: "Post 4" },
-  { image: "/", title: "Post 5" },
+  { 
+    image: "https://www.kwic.in/_next/image?url=%2Fassets%2Fbulk-section-img.png&w=1920&q=100", 
+    title: "Get in-depth insights into your customer interactions with KWIC's analytics dashboard. Track performance, measure customer",
+    icon: BsInstagram 
+  },
+  { 
+    image: "https://www.kwic.in/_next/image?url=%2Fassets%2Fchatbot-img.png&w=1920&q=100", 
+    title: "Get in-depth insights into your customer interactions with KWIC's analytics dashboard. Track performance, measure customer",
+    icon: BsFacebook
+  },
+  { 
+    image: "https://www.kwic.in/_next/image?url=%2Fassets%2Fteam-img.png&w=1920&q=100", 
+    title: "Get in-depth insights into your customer interactions with KWIC's analytics dashboard. Track performance, measure customer",
+    icon: BsInstagram
+  },
+  { 
+    image: "https://www.kwic.in/_next/image?url=%2Fassets%2Fanalaysis-img.png&w=1920&q=100", 
+    title: "Get in-depth insights into your customer interactions with KWIC's analytics dashboard. Track performance, measure customer",
+    icon: BsInstagram
+  },
+  { 
+    image: "https://www.kwic.in/_next/image?url=%2Fassets%2Fteam-img.png&w=1920&q=100", 
+    title: "Get in-depth insights into your customer interactions with KWIC's analytics dashboard. Track performance, measure customer",
+    icon: BsFacebook
+  },
 ];
 
 export default function Gridbox() {
-  const [visibleCount, setVisibleCount] = useState(0);
-
-  useEffect(() => {
-    if (visibleCount < grid.length) {
-      const timer = setTimeout(() => {
-        setVisibleCount((prev) => prev + 1);
-      }, 500);
-      return () => clearTimeout(timer);
-    }
-  }, [visibleCount]);
+  const [visibleCount, setVisibleCount] = useState(5);
 
   return (
-    <div className="mt-10 px-9">
+    <div className="mt-10 px-9 max-w-7xl mx-auto">
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-[22px] font-semibold">Start Automate Post</h1>
         <button className="border px-3 py-1 rounded-md border-gray-200 text-gray-500">
@@ -31,49 +43,39 @@ export default function Gridbox() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-        {grid.slice(0, visibleCount).map((item, index) => (
-          <div
-            key={index}
-            className="relative bg-white border border-gray-300 rounded-lg overflow-hidden p-3 transform transition-all duration-500 ease-in-out opacity-0 scale-95 translate-y-4 animate-fadeIn"
-            style={{
-              animation: 'fadeInUp 0.5s ease forwards',
-              animationDelay: `${index * 0.1}s`,
-            }}
-          >
-            <div className="relative">
-              {/* Facebook logo button */}
-              <button className="absolute top-2 right-2 bg-blue-600 text-white p-2 rounded-full shadow">
-                <FaFacebookF size={16} />
-              </button>
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-[200px] object-cover rounded-md"
-              />
+        {grid.slice(0, visibleCount).map((item, index) => {
+          const IconComponent = item.icon;
+          const isInstagram = item.icon === BsInstagram;
+          
+          return (
+            <div
+              key={index}
+              className="relative bg-white border border-gray-300 rounded-lg overflow-hidden p-3"
+            >
+              <div className="relative">
+                {/* Social media logo button */}
+                <button 
+                  className={`absolute top-2 right-2 text-white p-2 rounded-full shadow ${
+                    isInstagram 
+                      ? 'bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500' 
+                      : 'bg-blue-600'
+                  }`}
+                >
+                  <IconComponent size={16} />
+                </button>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-[200px] object-cover rounded-md"
+                />
+              </div>
+
+              <h2 className="mt-3 text-sm">{item.title}</h2>
+              <Button label='Automate post' className="mt-2 bg-green-500 text-white w-full py-2 rounded-md hover:bg-green-600 transition"/>
             </div>
-
-            <h2 className="mt-3 text-md font-medium">{item.title}</h2>
-
-            <button className="mt-2 bg-green-500 text-white w-full py-2 rounded-md hover:bg-green-600 transition">
-              Automate Post
-            </button>
-          </div>
-        ))}
+          );
+        })}
       </div>
-
-      {/* Animation Keyframes */}
-      <style>{`
-        @keyframes fadeInUp {
-          0% {
-            opacity: 0;
-            transform: translateY(20px) scale(0.95);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-          }
-        }
-      `}</style>
     </div>
   );
 }
