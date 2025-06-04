@@ -37,7 +37,7 @@ export default function Navbar() {
           className={({ isActive }) =>
             `flex items-center gap-1 min-w-fit px-3 py-1 rounded-xl ${
               isActive
-                ? "text-green-600 bg-white "
+                ? "text-green-500 font-semibold bg-white "
                 : "text-gray-600 hover:text-gray-800 hover:bg-gray-100"
             }`
           }
