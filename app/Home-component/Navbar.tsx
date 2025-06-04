@@ -29,7 +29,7 @@ export default function Navbar() {
 
   return (
     <div className="max-w-7xl mx-auto">
-    <div className="flex p-1 bg-gray-100 mt-5 mx- justify-center space-x-2 sm:space-x-2  max-w-[520px] rounded-[30px] ">
+    <div className="flex p-1 bg-gray-200 mt-5 mx- justify-center space-x-2 sm:space-x-2  max-w-[520px] rounded-[30px] ">
       {navItems.map(({ to, icon: Icon, label }) => (
         <NavLink
           key={to}
