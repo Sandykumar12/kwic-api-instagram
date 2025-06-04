@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "~/Reusecomponent/Button";
 import {
   LineChart,
   Line,
@@ -8,6 +9,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { IoIosArrowRoundDown } from "react-icons/io";
 
 interface DataPoint {
   month: string;
@@ -81,9 +83,9 @@ export default function AnalyticsChart(): JSX.Element {
               <span className="text-sm text-gray-600">Comment</span>
             </div>
           </div>
-          <button className="text-sm text-gray-500 border border-gray-300 px-3 py-1 rounded-md hover:bg-gray-50 transition-colors whitespace-nowrap">
-            View all post <span className="ml-1">↓</span>
-          </button>
+         <Button className=' border px-3 py-1 rounded-md border-gray-200 text-gray-500 text-xs flex'
+               label='view all post '
+              icon ={<IoIosArrowRoundDown className="text-[20px]  items-center justify-center gap-10"/>} />
         </div>
       </div>
 
@@ -101,7 +103,7 @@ export default function AnalyticsChart(): JSX.Element {
             >
               <CartesianGrid
                 strokeDasharray="3 3"
-                stroke="#cbd5e1" // stronger color (Tailwind's slate-300)
+                stroke="#cbd5e1" 
                 horizontal={true}
                 vertical={false}
               />

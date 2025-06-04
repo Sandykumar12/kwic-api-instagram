@@ -40,15 +40,15 @@ export default function AnalyticsDashboard() {
 
   return (
     <div className=" bg-gray-50 max-w-7xl mx-auto mt-10">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {stats.map((stat) => {
           const IconComponent = stat.icon;
           return (
             <div
               key={stat.id}
-              className="bg-white rounded-lg p-6  border border-gray-300"
+              className="bg-white rounded-lg p-3  border border-gray-300"
             >
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2">
                 <div className={`${stat.bgColor} p-3 rounded-lg`}>
                   <IconComponent className={`w-6 h-6 ${stat.iconColor}`} />
                 </div>

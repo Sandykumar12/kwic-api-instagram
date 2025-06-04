@@ -1,12 +1,20 @@
-// Button.jsx or Button.tsx (if using TypeScript)
-export default function Button({ label, className, onClick } :any) {
+import React from "react";
+
+interface ButtonProps {
+  label: string;
+  className?: string;
+  onClick?: () => void;
+  icon?: React.ReactNode;
+}
+
+export default function Button({ label, className = "", onClick, icon }: ButtonProps) {
   return (
     <button
       onClick={onClick}
-      className={` ${className}`}
+      className={`flex items-center gap-2 ${className}`}
     >
-      {label}
+      {icon && <span>{icon}</span>}
+      <span>{label}</span>
     </button>
   );
 }
-

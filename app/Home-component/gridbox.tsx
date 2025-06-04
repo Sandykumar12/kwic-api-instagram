@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BsFacebook, BsInstagram } from "react-icons/bs";
 import Button from "../Reusecomponent/Button";
+import { IoIosArrowRoundDown } from "react-icons/io";
 
 const grid = [
   {
@@ -48,13 +49,14 @@ export default function Gridbox() {
   };
 
   return (
-    <div className="mt-10 px-9 max-w-7xl mx-auto">
+    <div className="mt-10  max-w-7xl mx-auto">
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-[22px] font-semibold">Start Automate Post</h1>
-        <button className="border px-3 py-1 rounded-md border-gray-200 text-gray-500">
-          View all post
-        </button>
+      <Button className=' border px-3 py-1 rounded-md border-gray-200 text-gray-500 text-xs'
+      label='view all post'
+      icon= {<IoIosArrowRoundDown className="text-[20px]"/>} />
       </div>
+     
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
         {grid.map((item, index) => {
@@ -102,7 +104,7 @@ export default function Gridbox() {
 
               <Button
                 label="Automate post"
-                className="mt-2 bg-green-500 text-white w-full py-2 rounded-md hover:bg-green-600 transition"
+                className="mt-2 bg-green-500  justify-center text-white w-full py-2 rounded-md hover:bg-green-600 transition"
               />
             </div>
           );
